@@ -1,0 +1,43 @@
+﻿@model  Courses_Management_System.ViewModels.UpdateProfileViewModel 
+
+<div class="row" style="margin-top: 5%;margin-bottom: 5%;color: black;">
+    <div class="col-lg-3 col-md-3"></div>
+    <div class="col-lg-6 col-md-6" style="background-color: #f8f9fa!important; padding: 2%;color: white; border: 1px solid #17a2b8">
+        <h4 style="margin-bottom: 3%; color: black">Update Profile</h4>
+        <hr style="margin-bottom: 3%;background-color: black;">
+        @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+        <form action="/Profile/Update" method="post" style="color: black;">
+            <div class="form-row">
+                @Html.AntiForgeryToken()
+
+                <div class="col">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label" }) *
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label" }) *
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-row" style="margin-top:3%;">
+                <div class="col">
+                    @Html.LabelFor(model => model.CurrentPassword, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.CurrentPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    <small id="emailHelp" class="form-text text-muted">Current password required to change your password.</small>
+                    @Html.ValidationMessageFor(model => model.CurrentPassword, "", new { @class = "text-danger" })
+                </div>
+                <div class="col">
+                    @Html.LabelFor(model => model.NewPassword, htmlAttributes: new { @class = "control-label" })
+                    @Html.EditorFor(model => model.NewPassword, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NewPassword, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-outline-info" style="margin-top: 3%;">Update</button>
+        </form>
+    </div>
+
+</div>

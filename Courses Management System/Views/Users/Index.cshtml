@@ -1,0 +1,35 @@
+﻿<div class="row" style="margin-top: 5%;text-align: right;">
+    <div class="col-lg-12 col-md-12">
+        <a href="/Users/Add/@ViewBag.Role.Id" class="btn btn-info">Add @ViewBag.Role.Name </a>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 2%;">
+    <table class="table">
+        <thead style="background-color: #343a40!important; color: white;">
+            <tr>
+                <th scope="col" style="width: 20%;">Username</th>
+                <th scope="col" style="width: 20%;">Name</th>
+                <th scope="col" style="width: 20%;">Email</th>
+                <th scope="col" style="width: 20%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in ViewBag.Users)
+            {
+
+                <tr>
+                    <th scope="row">@user.UserName</th>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td>@user.Email</td>
+                    <td style="text-align: right">
+                        <a href="/Users/Delete/@user.Id" class="btn btn-danger"><span class="fa fa-remove"></span></a>
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+
+</div>
