@@ -1,0 +1,25 @@
+﻿<div class="row" style="margin-top: 2%;">
+    <table class="table">
+        <thead style="background-color: #343a40!important; color: white;">
+            <tr>
+                <th scope="col" style="width: 25%;">Name</th>
+                <th scope="col" style="width: 25%;">Scheduled time</th>
+                <th scope="col" style="width: 25%;">Teacher</th>
+                <th scope="col" style="width: 25%;">Nom of students</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var course in ViewBag.Courses)
+            {
+                <tr>
+                    <td>@course.Name</td>
+                    <td>@course.Time</td>
+                    <td>@course.Teacher</td>
+                    <td><a href="#">@course.Students Students</a></td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+</div>
